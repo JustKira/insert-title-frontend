@@ -12,6 +12,7 @@ import gsap from 'gsap'
 const LandingSliders = () => {
 
     const slider_container = useRef(null)
+    const radios_buttons = useRef(null)
 
     const [slide,
         setSlide] = useState(0)
@@ -31,6 +32,21 @@ const LandingSliders = () => {
             }
         })
     }, [slide])
+
+    useEffect(()=> {
+        gsap.fromTo(radios_buttons.current, {
+            opacity: 0
+        }, {
+            x: 0,
+            opacity: 1,
+            delay:0.3,
+            duration: 1.5,
+            scrollTrigger: {
+                trigger: radios_buttons.current,
+                toggleActions: "play none resume reset"
+            }
+        })
+    },[])
 
     const SlideHandler = () => {
         if (slide === 1) {
@@ -57,7 +73,7 @@ const LandingSliders = () => {
 
     return (
         <div className='flex items-center justify-between'>
-            <div className='flex flex-col ml-10'>
+            <div className='flex flex-col ml-10' ref={radios_buttons}>
                 <Radio
                     id='1'
                     label=''

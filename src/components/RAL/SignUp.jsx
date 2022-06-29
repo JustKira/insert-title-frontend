@@ -11,9 +11,13 @@ const SignUp = () => {
     useEffect(() => {
         gsap.fromTo(signup_container.current, {
             opacity: 0,
+            y:100,
+            rotateY:45,
         }, {
             opacity: 1,
             duration: 1,
+            rotateY:0,
+            y:0,
             scrollTrigger: {
                 trigger: signup_container.current,
                 toggleActions: "play none resume reset"
