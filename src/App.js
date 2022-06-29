@@ -1,12 +1,10 @@
-import Cards from "./components/Cards";
-import Navbar from "./components/navbar";
-
+import Landing from"./components/Landing/Landing"
+import {ReactComponent as Hero} from './svg/hero.svg'
 
 function App() {
   return (
-    <div className='bg-gray-200 h-max'>
-    <Navbar/>
-    <Cards/>
+    <div className='font-Pop'>
+          <Landing/>
     </div>
   );
 }

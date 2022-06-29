@@ -1,22 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-const plugin=require("tailwindcss/plugin")
-const Myclass=plugin(function({addUtilities}){
-  addUtilities({
-    ".my-rotate-animation":{
-      transform:"rotateY(180deg)",
-    }
-  })
-})
+
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {
-      minHeight:{
-        '3/4':'65vh',
-      }
+    content: ["./src/**/*.{js,jsx,ts,tsx}"],
+    theme: {
+        extend: {
+            dropShadow: {
+                blueglow: '0px 10px 8px #1088CC'
+            },
+            fontFamily: {
+                Pop: ['Poppins', 'sans-serif']
+            },      minHeight:{
+                '3/4':'65vh',
+              }
+        }
     },
-  },
-  plugins: [Myclass],
+    plugins: []
 }
