@@ -8,8 +8,6 @@ const Radio = ({
     ...other
 }) => {
 
-    console.log(other)
-
     if (isChecked === 'true') {
         return (
             <div>

@@ -34,7 +34,6 @@ const SignUp = ({children}) => {
                     Sign Up
                 </h1>
                 <form>
-
                     <div className='mt-4'>
                         <label className='block font-light text-lg capitalize'>user name</label>
                         <InputField type='text' placeholder="nickname"/>

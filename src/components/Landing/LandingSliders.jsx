@@ -27,7 +27,7 @@ const LandingSliders = () => {
             opacity: 1,
             duration: 1,
             scrollTrigger: {
-                trigger: slider_container.current,
+                trigger: radios_buttons.current,
                 toggleActions: "play none resume reset"
             }
         })
