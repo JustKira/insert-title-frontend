@@ -9,9 +9,10 @@ module.exports = {
             },
             fontFamily: {
                 Pop: ['Poppins', 'sans-serif']
-            },      minHeight:{
-                '3/4':'65vh',
-              }
+            },
+            minHeight: {
+                '3/4': '65vh'
+            }
         }
     },
     plugins: []

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from './Inputs/Button';
 
 export default function Filters() {
     let [extended, setExtended] = useState(false);
@@ -24,7 +25,7 @@ export default function Filters() {
                 <option value="AI">AI & ML</option>
                 <option value="DATA analytics">DATA ANALISIS</option>
                 </select>
-                <button className='h-10 w-40 bg-zinc-300 '>Apply Filters</button>
+                <Button>Apply Filters</Button>
             </div>
 }
     </div>
