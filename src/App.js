@@ -1,9 +1,13 @@
 import Landing from"./components/Landing/Landing"
-import {ReactComponent as Hero} from './svg/hero.svg'
+//Anim Plugins
+import gsap from "gsap";
+import ScrollTrigger from 'gsap/src/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   return (
-    <div className='font-Pop'>
+    <div className='font-Pop overflow-hidden'>
           <Landing/>
     </div>
   );

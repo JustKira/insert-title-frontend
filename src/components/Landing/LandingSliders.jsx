@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 
 import {ReactComponent as Imgslide1} from '../../svg/landing_sliders/lp_1.svg'
 import {ReactComponent as Imgslide2} from '../../svg/landing_sliders/lp_2.svg'
@@ -7,7 +7,30 @@ import {ReactComponent as Imgslide3} from '../../svg/landing_sliders/lp_3.svg'
 import LandingSlide from './LandingSlide'
 import Radio from '../Inputs/Radio'
 
+import gsap from 'gsap'
+
 const LandingSliders = () => {
+
+    const slider_container = useRef(null)
+
+    const [slide,
+        setSlide] = useState(0)
+
+    useEffect(() => {
+
+        gsap.fromTo(slider_container.current, {
+            x: '30rem',
+            opacity: 0
+        }, {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+                trigger: slider_container.current,
+                toggleActions: "play none resume reset"
+            }
+        })
+    }, [slide])
 
     const SlideHandler = () => {
         if (slide === 1) {
@@ -31,13 +54,6 @@ const LandingSliders = () => {
             )
         }
     }
-
-    const [slide,
-        setSlide] = useState(0)
-
-    useEffect(() => {
-        console.log(slide)
-    }, [slide])
 
     return (
         <div className='flex items-center justify-between'>
@@ -67,8 +83,9 @@ const LandingSliders = () => {
                 }}
                     name="slider-radio"/>
             </div>
-
-            <SlideHandler/>
+            <div className='w-full' ref={slider_container}>
+                <SlideHandler/>
+            </div>
 
         </div>
     )
