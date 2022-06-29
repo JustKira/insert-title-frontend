@@ -1,11 +1,11 @@
 import React, {useEffect, useRef} from 'react'
-import Button from '../Inputs/Button'
+import Button from '../components/Inputs/Button'
 
 //import images
-import {ReactComponent as Hero} from '../../svg/hero.svg'
+import {ReactComponent as Hero} from '../svg/hero.svg'
 
-import LandingSliders from './LandingSliders'
-import LandingRAL from './LandingRAL'
+import LandingSliders from '../components/Landing/LandingSliders'
+import LandingSigning from '../components/Landing/LandingSigning'
 
 import gsap from 'gsap'
 
@@ -61,7 +61,7 @@ const Landing = () => {
                 </div>
             </div>
             <LandingSliders/>
-            <LandingRAL/>
+            <LandingSigning/>
         </div>
 
     )

@@ -27,7 +27,7 @@ const LandingSliders = () => {
             opacity: 1,
             duration: 1,
             scrollTrigger: {
-                trigger: slider_container.current,
+                trigger: radios_buttons.current,
                 toggleActions: "play none resume reset"
             }
         })
@@ -83,7 +83,7 @@ const LandingSliders = () => {
                 }}
                     name="slider-radio"/>
                 <Radio
-                    id='1'
+                    id='2'
                     label=''
                     isChecked='false'
                     onChange={() => {
@@ -91,7 +91,7 @@ const LandingSliders = () => {
                 }}
                     name="slider-radio"/>
                 <Radio
-                    id='1'
+                    id='3'
                     label=''
                     isChecked='false'
                     onChange={() => {
