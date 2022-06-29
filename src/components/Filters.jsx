@@ -21,7 +21,7 @@ export default function Filters() {
   return (
     <div className='w-full'>
        <div className='rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 h-10 w-10 text-center  cursor-pointer ' onClick={()=>handleExtend()}></div>
-            { extended &&<div className=' rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-500 h-88%  w-full justify-center p-1' ref={filterContainer}>
+            { extended &&<div className=' rounded-2xl  w-full justify-center p-1' ref={filterContainer}>
               <div className='w-full rounded-2xl bg-white justify-items-center p-2 flex justify-center flex-col items-center'>
                 <div className='rounded-3xl bg-gradient-to-r from-cyan-500 to-blue-500 w-70% items-center m-2'>
                   <select id="fields" className="shadow-inner cursor-pointer  text-black text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-80% p-2.5 m-1">
