@@ -5,7 +5,7 @@ import Button from '../Inputs/Button'
 import {ReactComponent as Hero} from '../../svg/hero.svg'
 
 import LandingSliders from './LandingSliders'
-import LandingRAL from './LandingRAL'
+import LandingSigning from './LandingSigning'
 
 import gsap from 'gsap'
 
@@ -61,7 +61,7 @@ const Landing = () => {
                 </div>
             </div>
             <LandingSliders/>
-            <LandingRAL/>
+            <LandingSigning/>
         </div>
 
     )

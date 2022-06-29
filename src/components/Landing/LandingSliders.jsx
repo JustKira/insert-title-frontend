@@ -83,7 +83,7 @@ const LandingSliders = () => {
                 }}
                     name="slider-radio"/>
                 <Radio
-                    id='1'
+                    id='2'
                     label=''
                     isChecked='false'
                     onChange={() => {
@@ -91,7 +91,7 @@ const LandingSliders = () => {
                 }}
                     name="slider-radio"/>
                 <Radio
-                    id='1'
+                    id='3'
                     label=''
                     isChecked='false'
                     onChange={() => {

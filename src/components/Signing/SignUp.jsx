@@ -4,20 +4,20 @@ import InputField from '../Inputs/InputField'
 import Radio from '../Inputs/Radio'
 import gsap from 'gsap'
 
-const SignUp = () => {
+const SignUp = ({children}) => {
 
     const signup_container = useRef(null)
 
     useEffect(() => {
         gsap.fromTo(signup_container.current, {
             opacity: 0,
-            y:100,
-            rotateY:45,
+            y: 100,
+            rotateY: 45
         }, {
             opacity: 1,
             duration: 1,
-            rotateY:0,
-            y:0,
+            rotateY: 0,
+            y: 0,
             scrollTrigger: {
                 trigger: signup_container.current,
                 toggleActions: "play none resume reset"
@@ -69,6 +69,9 @@ const SignUp = () => {
                     </div>
                     <div className='flex justify-center items-center mt-4'>
                         <Button>CREATE ACCOUNT</Button>
+                    </div>
+                    <div className='flex justify-center items-center mt-4'>
+                        {children}
                     </div>
                 </form>
             </div>
