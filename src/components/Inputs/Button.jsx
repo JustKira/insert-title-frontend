@@ -19,6 +19,7 @@ const Button = ({children, hollow}) => {
             </button>
         )
     }
+
 }
 
 export default Button

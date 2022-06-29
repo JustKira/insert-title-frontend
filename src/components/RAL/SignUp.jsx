@@ -1,11 +1,34 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import Button from '../Inputs/Button'
 import InputField from '../Inputs/InputField'
 import Radio from '../Inputs/Radio'
+import gsap from 'gsap'
 
 const SignUp = () => {
+
+    const signup_container = useRef(null)
+
+    useEffect(() => {
+        gsap.fromTo(signup_container.current, {
+            opacity: 0,
+            y:100,
+            rotateY:45,
+        }, {
+            opacity: 1,
+            duration: 1,
+            rotateY:0,
+            y:0,
+            scrollTrigger: {
+                trigger: signup_container.current,
+                toggleActions: "play none resume reset"
+            }
+        })
+    }, [])
+
     return (
-        <div className='flex items-center justify-center drop-shadow-2xl'>
+        <div
+            className='flex items-center justify-center drop-shadow-2xl'
+            ref={signup_container}>
             <div className=' flex-col items-center justify-center'>
                 <h1 className='mb-10 capitalize text-xl'>
                     Sign Up
@@ -14,7 +37,7 @@ const SignUp = () => {
 
                     <div className='mt-4'>
                         <label className='block font-light text-lg capitalize'>user name</label>
-                        <InputField type='text'  placeholder="nickname"/>
+                        <InputField type='text' placeholder="nickname"/>
                     </div>
                     <div className='mt-4'>
                         <label className='block font-light text-lg capitalize'>email</label>
@@ -49,7 +72,6 @@ const SignUp = () => {
                     </div>
                 </form>
             </div>
-
         </div>
     )
 }
