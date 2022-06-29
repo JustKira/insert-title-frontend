@@ -1,10 +1,11 @@
 import React from 'react'
 import Button from '../Inputs/Button'
-
+import Radio from '../Inputs/Radio'
 //import images
 import {ReactComponent as Hero} from '../../svg/hero.svg'
 
 import LandingSliders from './LandingSliders'
+import LandingRAL from './LandingRAL'
 const Landing = () => {
     return (
         <div>
@@ -16,15 +17,15 @@ const Landing = () => {
                     <Button>Hello world</Button>
                     <Button hollow={true}>Hello world</Button>
                 </div>
+               
                 <div>
                     <Hero width='600' height='600' className='drop-shadow-blueglow'/>
                 </div>
             </div>
-
             <LandingSliders/>
+            <LandingRAL/>
         </div>
 
-        
     )
 }
 
