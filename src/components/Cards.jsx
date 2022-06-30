@@ -36,7 +36,7 @@ export default function Cards() {
             <Discription/>
            
         </div>
-        <div className='  flex flex-wrap items-start overflow-auto overflow-x-hidden h-full justify-end' ref={cardContainer}>
+        <div className='  flex flex-wrap items-start overflow-auto overflow-x-hidden h-full justify-end p-5' ref={cardContainer}>
         {/* {posts.map((post)=>(<div className='rounded-xl p-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-white mx-3 mb-5 w-80 h-80 cursor-pointer transition ease-in-out delay-100  hover:-translate-y-1 hover:scale-110  duration-300 '>
                 
                 <img className='rounded-full w-20' src={post.image}/>
