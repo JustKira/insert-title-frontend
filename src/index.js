@@ -9,13 +9,25 @@ import Footer from './components/Footer/Footer'
 
 import {BrowserRouter} from 'react-router-dom'
 
+import {Provider} from 'react-redux'
+import {configureStore} from "@reduxjs/toolkit"
+
+import { exampleSlice } from './redux/Example'
+
+//start store
+const store = configureStore({reducer: {
+        example : exampleSlice
+}})
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Navbar/>
-            <App/>
-            <Footer/>
+            <Provider store={store}>
+                <Navbar/>
+                <App/>
+                <Footer/>
+            </Provider>
         </BrowserRouter>
     </React.StrictMode>
 );
