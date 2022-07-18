@@ -7,7 +7,6 @@ export default function Filters() {
   const handleExtend=()=>{
     if(extended){setExtended(false)}
     else setExtended(true)
-    console.log(extended)
   }
   useEffect(()=>{
     gsap.fromTo(filterContainer.current, {
@@ -17,7 +16,7 @@ export default function Filters() {
       duration: 1,
       delay:.1,
   })
-  })
+  },[extended])
   return (
     <div className='w-full'>
        <div className='rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 h-10 w-10 text-center  cursor-pointer ' onClick={()=>handleExtend()}></div>
