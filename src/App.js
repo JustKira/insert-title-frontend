@@ -1,6 +1,7 @@
 //Anim Plugins
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/src/ScrollTrigger'
+import Cards from './components/Cards';
 
 import {Routes, Route} from "react-router-dom";
 
