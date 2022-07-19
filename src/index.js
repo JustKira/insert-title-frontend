@@ -32,6 +32,16 @@ const persistedReducer = persistReducer(persistConfig, userSlice)
  const persistor = persistStore(store)
 
 
+import {Provider} from 'react-redux'
+import {configureStore} from "@reduxjs/toolkit"
+
+import { exampleSlice } from './redux/Example'
+
+//start store
+const store = configureStore({reducer: {
+        example : exampleSlice
+}})
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
