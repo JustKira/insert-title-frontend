@@ -1,7 +1,7 @@
 //CreateAsyncThunk can be used to make fetch requests inside reducers
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-export const exampleSlice = createSlice({
+const exampleSlice = createSlice({
     //Name of reducer to call it
     name: "example_name",
 
@@ -24,14 +24,13 @@ export const exampleSlice = createSlice({
 export const { addExample } = exampleSlice.actions;
 export default exampleSlice.reducer;
 
+// //This is how you Get data is like MapPropToState
+// import {useSelector} from "react-redux";
+// //values of reducer is stored in example (or any other name)
+// const example = useSelector((state) => state.example_name.value)
 
-//This is how you Get data is like MapPropToState
-import {useSelector} from "react-redux";
-//values of reducer is stored in example (or any other name)
-const example = useSelector((state) => state.example_name.value)
+// //Used to call actions 
+// const dispatch = useDispatch()
+// //for example () => dispatch(addExample({data:data,data1:data1}))
 
-//Used to call actions 
-const dispatch = useDispatch()
-//for example () => dispatch(addExample({data:data,data1:data1}))
-
-//ref https://www.youtube.com/watch?v=bml92jhF4t8
+// //ref https://www.youtube.com/watch?v=bml92jhF4t8
