@@ -28,7 +28,7 @@ const LandingSliders = () => {
             duration: 1,
             scrollTrigger: {
                 trigger: radios_buttons.current,
-                toggleActions: "play none resume reset"
+                toggleActions: "play none none reset"
             }
         })
     }, [slide])
@@ -43,7 +43,7 @@ const LandingSliders = () => {
             duration: 1.5,
             scrollTrigger: {
                 trigger: radios_buttons.current,
-                toggleActions: "play none resume reset"
+                toggleActions: "play none none reset"
             }
         })
     },[])

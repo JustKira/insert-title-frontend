@@ -5,7 +5,12 @@ module.exports = {
     theme: {
         extend: {
             dropShadow: {
-                blueglow: '0px 10px 8px #1088CC'
+                blueglow: '0px 10px 8px #1088CC',
+                '4xl': [
+                    '0 5px 5px rgba(0, 0, 0, 0.2)',
+                    '0 10px 15px rgba(0, 0, 0, 0.1)',
+                    '0 -10px 15px rgba(231, 250, 254, 1)'
+                ]
             },
             fontFamily: {
                 Pop: ['Poppins', 'sans-serif']

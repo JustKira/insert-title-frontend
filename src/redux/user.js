@@ -10,7 +10,7 @@ const userSlice = createSlice({
     missingInput:false,
   },
   reducers: {
-    //============login===========
+
     loginStart:(state)=>{
         state.isFetching=true;
         state.error=false;
@@ -23,11 +23,9 @@ const userSlice = createSlice({
         state.isFetching=false;
         state.error=true;
     },
-    //=======logout======
     logout: (state) => {
       state.currentUser = null;
     },
-    //========register==========
     startRegistering:(state)=>{
       state.isFetching=true;
       state.error=false
@@ -38,7 +36,7 @@ const userSlice = createSlice({
       state.error=true;
       state.match=true
     },
-    //as default state to
+
     successRegistering:(state)=>{
       state.isFetching=false;
       state.error=false;
@@ -49,7 +47,7 @@ const userSlice = createSlice({
     passwordMatching:(state)=>{
       state.match=false
     },
-    //missing input field case
+
     missing:(state)=>{
       state.missingInput=true
     },
