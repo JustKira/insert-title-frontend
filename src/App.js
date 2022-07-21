@@ -27,9 +27,9 @@ function App() {
                 <Route path="/profile" element={< Profile />}/>
                 <Route path="/posts/1" element={< PostDetail post={{
                     image:"https://www.valeo.com/wp-content/uploads/2021/09/logo-footer.png", title:"Job Title", company:"Company", pay_range:"pay-range", location:"Location", description:placeholder_text, questions:[
-                    {'question':"What's your name?",'type':"text"},
-                    {'question':"What's your name?",'type':"textarea"},
-                    {'question':"What's your name?",'type':"dropdown", 'choices':['Choice1', 'Choice2', 'Choice3']}
+                    {id:0,question:"What's your name?",type:"text"},
+                    {id:1,question:"What's your name?",type:"textarea"},
+                    {id:2,question:"What's your name?",type:"dropdown", choices:['Choice1', 'Choice2', 'Choice3']}
                     ]}}/>}/>
             </Routes>
 
