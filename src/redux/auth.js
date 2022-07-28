@@ -12,6 +12,15 @@ export const getAuth = createAsyncThunk('auth/getAuth',async (values) => {
     return AxiosClient(option).post('token/',JSON.stringify(values))
 })
 
+export const getCreateUser = createAsyncThunk('auth/getCreateUser',async (values) => {
+    const option = {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    }
+    return AxiosClient(option).post('register/',JSON.stringify(values))
+})
+
 const authSlice = createSlice({
     name:"auth",
     initialState: {
@@ -19,7 +28,7 @@ const authSlice = createSlice({
         status: null
     },
     extraReducers: {
-        [getAuth.pending]: (state,action) => {
+        [getAuth.pending]: (state) => {
             state.status = 'loading'
         },
         [getAuth.fulfilled]: (state,{payload}) => {
@@ -28,7 +37,20 @@ const authSlice = createSlice({
         },
         [getAuth.rejected]: (state,{payload}) => {
             state.status = 'failed'
-            state.status_res = payload
+            state.values = payload
+        },
+
+        //User Register
+        [getCreateUser.pending]: (state) => {
+            state.status = 'sending'
+        },
+        [getCreateUser.fulfilled]: (state,{payload}) => {
+            state.status = 'success'
+            state.values = payload
+        },
+        [getCreateUser.rejected]: (state,{payload}) => {
+            state.status = 'failed'
+            state.values = payload
         },
     }
 })

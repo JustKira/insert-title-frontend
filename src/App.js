@@ -11,6 +11,7 @@ import Posts from "./pages/Posts";
 import Profile from "./pages/Profile";
 import RoadMap from "./pages/RoadMap";
 import PostDetail from './pages/PostDetail'
+import SignInUp from './pages/SignInUp'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -25,6 +26,8 @@ function App() {
                 <Route path="/cv-builder" element={< CVBuilder />}/>
                 <Route path="/road-map" element={< RoadMap />}/>
                 <Route path="/profile" element={< Profile />}/>
+                <Route path="/profile" element={< Profile />}/>
+                <Route path="/signing" element={< SignInUp />}/>
                 <Route path="/posts/1" element={< PostDetail post={{
                     image:"https://www.valeo.com/wp-content/uploads/2021/09/logo-footer.png", title:"Job Title", company:"Company", pay_range:"pay-range", location:"Location", description:placeholder_text, questions:[
                     {id:0,question:"What's your name?",type:"text"},

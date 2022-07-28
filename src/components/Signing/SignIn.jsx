@@ -25,16 +25,13 @@ const SignIn = ({children}) => {
             y: 0,
             scrollTrigger: {
                 trigger: signin_container.current,
-                toggleActions: "play none none reset"
+                toggleActions: "play none none none"
             }
         })
     }, [])
 
     const onSubmit = (values, actions) => {
-        console.log(values)
-        console.log(actions)
         dispatch(getAuth(values))
-        
     }
 
     const {

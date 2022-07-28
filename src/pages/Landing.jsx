@@ -5,14 +5,19 @@ import Button from '../components/Inputs/Button'
 import {ReactComponent as Hero} from '../svg/hero.svg'
 
 import LandingSliders from '../components/Landing/LandingSliders'
-import LandingSigning from '../components/Landing/LandingSigning'
 
 import gsap from 'gsap'
+import Signing from '../components/Signing/Signing'
 
 const Landing = () => {
 
     const container = useRef(null)
     const button_container = useRef(null)
+    const scroll_to_sign = useRef(null)
+    const scroll_to_slider = useRef(null)
+
+    const ScrollToSign = () => scroll_to_sign.current.scrollIntoView()    
+    const ScrollToSlider = () => scroll_to_sign.current.scrollIntoView()    
 
     useEffect(() => {
         gsap.fromTo(container.current.children[0], {
@@ -60,8 +65,8 @@ const Landing = () => {
                     <Hero width='600' height='600' className='drop-shadow-blueglow'/>
                 </div>
             </div>
-            <LandingSliders/>
-            <LandingSigning/>
+            <LandingSliders ref={scroll_to_slider}/>
+            <Signing ref={scroll_to_sign}/>
         </div>
 
     )
