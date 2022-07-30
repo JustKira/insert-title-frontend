@@ -1,58 +1,37 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
+import AxiosClient from "../Api/AxiosClient"
+import jwt_decode from "jwt-decode"
+
+export const getUserData = createAsyncThunk('user/getUserData', async(obj,{getState}) => {
+
+    let state = getState()
+    const option = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    return AxiosClient(option).get(`user/${jwt_decode(state.auth.values.data.refresh).id}`, {timeout: 100})
+})
 
 const userSlice = createSlice({
-  name: "user",
-  initialState: {
-    currentUser:null,
-    isFetching:false,
-    error:false,
-    match:true,
-    missingInput:false,
-  },
-  reducers: {
+    name: "user",
+    initialState: {
+        values: [],
+        status: null
+    },
+    extraReducers: {
+        [getUserData.pending]: (state) => {
+            state.status = 'loading'
+        },
+        [getUserData.fulfilled]: (state, {payload}) => {
+            state.status = 'success'
+            state.values = payload
+        },
+        [getUserData.rejected]: (state, {payload}) => {
+            state.status = 'failed'
+            state.values = payload
+        }
+    }
+})
 
-    loginStart:(state)=>{
-        state.isFetching=true;
-        state.error=false;
-    },
-    loginSuccess:(state,action)=>{
-        state.isFetching=false;
-        state.currentUser=action.payload;
-    },
-    loginFailure:(state)=>{
-        state.isFetching=false;
-        state.error=true;
-    },
-    logout: (state) => {
-      state.currentUser = null;
-    },
-    startRegistering:(state)=>{
-      state.isFetching=true;
-      state.error=false
-      state.missingInput=false;
-    },
-    failRegistering:(state)=>{
-      state.isFetching=false;
-      state.error=true;
-      state.match=true
-    },
-
-    successRegistering:(state)=>{
-      state.isFetching=false;
-      state.error=false;
-      state.match=true;
-      state.missingInput=false;
-      
-    },
-    passwordMatching:(state)=>{
-      state.match=false
-    },
-
-    missing:(state)=>{
-      state.missingInput=true
-    },
-  }
-});
-
-export const { loginStart,loginSuccess,loginFailure,logout,failRegistering,successRegistering,startRegistering,passwordMatching,missing } = userSlice.actions;
 export default userSlice.reducer;
