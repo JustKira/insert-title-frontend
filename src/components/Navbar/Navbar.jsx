@@ -1,10 +1,23 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import {Link, useSearchParams} from 'react-router-dom'
 
 import {ReactComponent as IT_LOGO} from '../../svg/inserttitlelogo.svg'
 
 const Navbar = () => {
+    const redux = useSelector((state)=> state.auth.values.data)
 
+    const ProfileSwitch = () => {
+        try {
+            if(redux.refresh != '' || redux.refresh != undefined) {
+                return <Link to="/profile">PROFILE</Link>
+            }
+        } catch (error) {
+            
+        }
+        return <Link to="/signing">LOGIN</Link>
+    
+    }
     return (
         <div className='h-16'>
             <div className='fixed w-full mt-2 z-10'>
@@ -22,7 +35,7 @@ const Navbar = () => {
                                 <Link to="/road-map">ROAD-MAP</Link>
                             </li>
                             <li className='inline-block mr-10'>
-                                <Link to="/profile">PROFILE</Link>
+                                <ProfileSwitch />
                             </li>
                         </ul>
                     </div>
