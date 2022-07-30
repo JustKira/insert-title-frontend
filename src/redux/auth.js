@@ -1,5 +1,6 @@
 import { createAsyncThunk,createSlice } from "@reduxjs/toolkit";
 import AxiosClient from "../Api/AxiosClient";
+import userSlice from "./user";
 
 //Used To Get Auth tokens by logging in 
 
@@ -33,7 +34,7 @@ const authSlice = createSlice({
         },
         [getAuth.fulfilled]: (state,{payload}) => {
             state.status = 'success'
-            state.values = payload
+            state.values = payload            
         },
         [getAuth.rejected]: (state,{payload}) => {
             state.status = 'failed'

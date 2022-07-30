@@ -10,11 +10,20 @@ export const signupSchema = yup.object().shape({
     email: yup.string().email("Please Enter valid email").required("Required"),
     phone_number: yup.string().matches(phoneRegExp, 'Phone number is not valid').required("Required"),
     password: yup.string().min(8).matches(passwordRules,{message:"Please Create a stronger password"}).required("Required"),
-    conpassword: yup.string().oneOf([yup.ref('password'),null],"Password Must match").required("Required")
+    password2: yup.string().oneOf([yup.ref('password'),null],"Password Must match").required("Required")
 })
 
 export const signinSchema = yup.object().shape({
-    email: yup.string().email("Please Enter valid email").required("Required"),
+    // email: yup.string().email("Please Enter valid email").required("Required"),
+    username: yup.string().required("Required"),
     password: yup.string().required("Required"),
     
+})
+
+export const addPostSchema = yup.object().shape({
+    post_name: yup.string().required("Required"),
+    post_description: yup.string().required("Required"),
+    company: yup.string().required("Required"),
+    pay_range: yup.number().moreThan(-1,'use ZERO for no payrange or add a vaild postive number').required("Required"),
+    location: yup.string().required("Required")
 })
