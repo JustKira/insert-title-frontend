@@ -46,6 +46,7 @@ const SignIn = ({children}) => {
             username: "",
             password: ""
         },
+        validationSchema: signinSchema,
         onSubmit
     })
 
