@@ -3,16 +3,15 @@ import Button from '../Inputs/Button'
 import InputField from '../Inputs/InputField'
 import Radio from '../Inputs/Radio'
 import gsap from 'gsap'
-import { useDispatch } from 'react-redux/es/exports'
 import {useFormik} from 'formik'
 import {signupSchema} from '../FormValidators/Vaildators'
-import AxiosClient from '../../Api/AxiosClient'
-import { getCreateUser } from '../../redux/auth'
+
+
+
 
 const SignUp = ({children}) => {
 
     const signup_container = useRef(null)
-    const dispatch = useDispatch()
 
     useEffect(() => {
         gsap.fromTo(signup_container.current, {
@@ -26,13 +25,14 @@ const SignUp = ({children}) => {
             y: 0,
             scrollTrigger: {
                 trigger: signup_container.current,
-                toggleActions: "play none none none"
+                toggleActions: "play none none reset"
             }
         })
     }, [])
 
     const onSubmit = (values, actions) => {
-        dispatch(getCreateUser(values))
+        console.log(values)
+        console.log(actions)
     }
 
     const {
@@ -50,7 +50,7 @@ const SignUp = ({children}) => {
             email: "",
             phone_number:"",
             password: "",
-            password2: "",    
+            conpassword: "",    
             userType: "S",
         },
         validationSchema: signupSchema,
@@ -145,8 +145,8 @@ const SignUp = ({children}) => {
                     <div className='mt-6 relative'>
                         <label className='block font-light text-lg capitalize'>confirm password</label>
                         <InputField
-                            id="password2"
-                            name="password2"
+                            id="conpassword"
+                            name="conpassword"
                             type='password'
                             value={values.conpassword}
                             onChange={handleChange}
