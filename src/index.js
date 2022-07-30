@@ -22,12 +22,12 @@ const persistConfig = {
   storage,
 }
 
-const persistedReducer = persistReducer(persistConfig, authSlice)
+const persistedReducer = persistReducer(persistConfig, userSlice)
 
 
 
 const store = configureStore({
-  reducer: {persistedReducer,posts:postsSlice,auth:authSlice,user:userSlice},
+  reducer: {persistedReducer,posts:postsSlice,auth:authSlice},
   devTools: process.env.NODE_ENV !== 'production',
   middleware: [thunk]
 })
